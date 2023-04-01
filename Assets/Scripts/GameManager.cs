@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
@@ -9,6 +12,9 @@ public class GameManager : MonoBehaviour
     public int enemyCount;
     public int waveNumber = 1;
     private int score;
+    public TextMeshProUGUI scoreText;
+    public TextMeshProUGUI gameOverText;
+    public bool isGameActive;
     // Start is called before the first frame update
     void Start()
     {
@@ -44,5 +50,12 @@ public class GameManager : MonoBehaviour
         {
             Instantiate(enemyPrefab, GenerateSpawnPosition(), enemyPrefab.transform.rotation);
         }
+    }
+
+    public void UpdateScore(int scoreToAdd)
+    {
+        //Makes the score go up
+        scoreText.text = "Score: " + score;
+        score += scoreToAdd;
     }
 }

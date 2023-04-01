@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class Destroyer : MonoBehaviour
 {
+    private GameManager gameManager;
     // Start is called before the first frame update
     void Start()
     {
-
+        gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
     }
 
     // Update is called once per frame
@@ -24,6 +25,7 @@ public class Destroyer : MonoBehaviour
             Destroy(other.gameObject);
         }
         Destroy(gameObject);
+        gameManager.UpdateScore(10);
 
     }
 
