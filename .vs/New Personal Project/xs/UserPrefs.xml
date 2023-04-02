@@ -1,9 +1,9 @@
 ﻿<Properties StartupConfiguration="{0F7F28BE-CCA8-09FA-F6CC-2B235C7A1B65}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/StartGame.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/FollowPlayer.cs">
     <Files>
-      <File FileName="Assets/Scripts/FollowPlayer.cs" Line="13" Column="9" />
+      <File FileName="Assets/Scripts/FollowPlayer.cs" Line="12" Column="21" />
       <File FileName="Assets/Scripts/PlayerController.cs" />
-      <File FileName="Assets/Scripts/GameManager.cs" Line="81" Column="6" />
+      <File FileName="Assets/Scripts/GameManager.cs" />
       <File FileName="Assets/Scripts/StartGame.cs" Line="16" Column="51" />
       <File FileName="Assets/Scripts/Destroyer.cs" Line="26" Column="36" />
     </Files>
@@ -13,7 +13,7 @@
           <Node name="New Personal Project" expanded="True">
             <Node name="Assets" expanded="True">
               <Node name="Scripts" expanded="True">
-                <Node name="StartGame.cs" selected="True" />
+                <Node name="FollowPlayer.cs" selected="True" />
               </Node>
             </Node>
           </Node>

@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-
+    //THIS SCRPIT WAS NOT WRITTEN BY ME
+    //IT CAME WITH THE ASSET I DOWNLOADED
     public float movementSpeed = 3;
     public float jumpForce = 300;
     public float timeBeforeNextJump = 1.2f;

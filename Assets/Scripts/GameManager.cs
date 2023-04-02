@@ -24,17 +24,21 @@ public class GameManager : MonoBehaviour
     }
 
     // Update is called once per frame
+    //Code used to spawn the enemies
     void Update()
     {
+        //Finds the amount of enemies in the scene 
         enemyCount = FindObjectsOfType<Destroyer>().Length;
 
+        //Code can only run when there are no enemies in the scene and isGameActive = true
         if (enemyCount == 0 && isGameActive)
         {
             waveNumber++;
             SpawnEnemyWave(waveNumber);
         }
     }
-
+    
+    //Used to randomly spawn in the logs inside the boundaries provided 
     private Vector3 GenerateSpawnPosition()
     {
         float SpawnposX = Random.Range(-spawnRange, spawnRange);
@@ -45,6 +49,7 @@ public class GameManager : MonoBehaviour
         return randomPos;
     }
 
+    //Code used the calcuate how many enemies to spawn and Instantiates them
     void SpawnEnemyWave(int enemiesToSpawn)
     {
 
@@ -54,14 +59,16 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    //Code used to keep track of the score 
     public void UpdateScore(int scoreToAdd)
     {
         
-        //Makes the score go up
+        //Makes the score go up in the UI
         scoreText.text = "Score: " + score;
         score += scoreToAdd;
     }
 
+    //When Start button is clicked, this method is runned 
     public void StartGame()
     {
         titleScreen.gameObject.SetActive(false);
@@ -69,12 +76,14 @@ public class GameManager : MonoBehaviour
         isGameActive = true;
     }
 
+    //When a log hits the player controller, this method is runned 
     public void GameOver()
     {
         endScreen.gameObject.SetActive(true);
         isGameActive = false;
     }
 
+    //When restart button is clicked, this method is runned 
     public void RestartGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
