@@ -16,10 +16,11 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI gameOverText;
     public bool isGameActive;
     public GameObject titleScreen;
+    public GameObject endScreen;
     // Start is called before the first frame update
     void Start()
     {
-        SpawnEnemyWave(waveNumber);
+        
     }
 
     // Update is called once per frame
@@ -27,7 +28,7 @@ public class GameManager : MonoBehaviour
     {
         enemyCount = FindObjectsOfType<Destroyer>().Length;
 
-        if (enemyCount == 0)
+        if (enemyCount == 0 && isGameActive)
         {
             waveNumber++;
             SpawnEnemyWave(waveNumber);
@@ -55,9 +56,30 @@ public class GameManager : MonoBehaviour
 
     public void UpdateScore(int scoreToAdd)
     {
+        
         //Makes the score go up
         scoreText.text = "Score: " + score;
         score += scoreToAdd;
     }
 
+    public void StartGame()
+    {
+        titleScreen.gameObject.SetActive(false);
+        SpawnEnemyWave(waveNumber);
+        isGameActive = true;
+    }
+
+    public void GameOver()
+    {
+        endScreen.gameObject.SetActive(true);
+        isGameActive = false;
+    }
+
+    public void RestartGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
 }
+
+    
+

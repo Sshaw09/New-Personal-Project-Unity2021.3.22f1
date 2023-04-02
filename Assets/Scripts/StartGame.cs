@@ -13,7 +13,7 @@ public class StartGame : MonoBehaviour
     {
         gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
         button = GetComponent<Button>();
-        button.onClick.AddListener(TitleScreen);
+        button.onClick.AddListener(gameManager.StartGame);
     }
 
     // Update is called once per frame
@@ -24,6 +24,6 @@ public class StartGame : MonoBehaviour
 
     void TitleScreen()
     {
-        titleScreen.gameObject.SetActive(false);
+        
     }
 }
